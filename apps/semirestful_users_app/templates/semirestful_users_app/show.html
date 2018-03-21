@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    {% load static %}
+    <!-- The line above tells Django to be ready to listen for static files -->
+    <link rel="stylesheet" href="{% static 'blogs/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <!-- Put the static files in the static folder inside your app.  Django collects files within all static folders and puts them within a single folder -->
+</head>
+
+<body>
+    <h1>User id: {{my_user.id}}</h1>
+    <p>Full name: {{my_user.first_name}}{{my_user.last_name}}</p>
+    <p>Email: {{my_user.email}}</p>
+    <p>Created at: {{my_user.created_at}}</p>
+
+    <a href="/users/{{my_user.id}}/edit">Edit</a><a href="/users/{{my_user.id}}/destroy">Delete</a>
+
+
+
+</body>
+
+</html>
